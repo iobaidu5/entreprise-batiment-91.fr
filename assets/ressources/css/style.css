@@ -1,0 +1,249 @@
+section.seo{
+	padding: 70px 0 70px;
+}
+
+section.seo h1{
+	font-size: 45px;
+}
+
+section.seo h2{
+	font-size: 36px;
+}
+
+section.seo h3{
+	font-size: 24px;
+}
+
+
+section.seo h4{
+	font-size: 18px;
+}
+
+.call-to-action-btn{
+	color: #fff;
+    background-color: #ccc;
+    border-color: #eee;
+    padding: 15px;
+  	border-radius: 2px;
+  	font-size: 18px;
+  	line-height: normal;
+  	-webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+.call-to-action-btn:hover{
+	text-decoration: none;
+	background-color: #333;
+	color: #fff;
+}
+
+.btn-margin{
+	margin-top: 30px;
+}
+
+.call-to-action{
+	position: relative;
+    z-index: 1;
+    border: 1px solid #eee;
+}
+
+
+.call-to-action-inner{
+	padding: 28px 28px 27px 31px;
+    background-color: #fff;
+    min-height: 110px;
+}
+
+.call-to-action-inner:before, .call-to-action-inner:after {
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    height: 20%;
+    max-width: 300px;
+    max-height: 100px;
+    position: absolute;
+    content: '';
+    z-index: -1;
+    -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+
+.call-to-action-inner:after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.px-0 {
+    padding: 0;
+}
+
+.full-img {
+    height: 310px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.spacing {
+    padding-bottom: 30px;
+}
+
+
+@media (min-width:992px) {
+    .d-md-flex {
+        display: flex;
+    }
+}
+
+/* ============================================================
+   == site2jekyll site fixes (entreprise-batiment-91.fr) ==
+   Desktop (>=1200px) is left exactly as on the origin; the rules
+   below only add the contact-form consent block and repair what the
+   origin theme breaks at tablet/phone widths.
+   They replace site2jekyll's generic "== site2jekyll responsive fixes =="
+   and "== site2jekyll theme QA fixes ==" blocks (written for another
+   theme: they shifted this site's menu, hero and cards); keeping those
+   marker strings here stops a re-run from appending them again.
+   ============================================================ */
+
+/* ---- forms: RGPD consent + reCAPTCHA + response line (form-consent.html),
+   on its own line under the fields + Envoyer button ---- */
+.form-consent { text-align: center; margin-top: 10px; clear: both; }
+.form-consent .checkbox { display: inline-block; margin: 5px 0 10px; text-align: left; max-width: 100%; }
+.form-consent .contact_content-form--label { font-family: 'Open Sans', sans-serif; font-size: 13px; font-weight: 400;
+  color: #333; line-height: 1.5; cursor: pointer; }
+.form-consent .checkbox input[type="checkbox"] { margin-top: 3px; }
+.contactprestation .form-consent .contact_content-form--label,
+.contactprestation .form-consent .fa { color: #fff; }
+.recaptcha-field { display: flex; justify-content: center; margin: 5px 0 10px; }
+.recaptcha-field .g-recaptcha { transform-origin: 50% 0; }
+.form-response { font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 1.5; }
+.form-response:empty { display: none; }
+.form-response.error { color: #c0392b; margin: 5px 0 10px; }
+.contactprestation .form-response.error { color: #fff; }
+.is-sending { opacity: .6; cursor: wait; }
+.message-sent .fa-check-circle { font-size: 60px; color: #466951; margin-bottom: 20px; }
+.message-sent a:not(.button) { color: #466951; font-weight: 700; }
+
+/* ---- home quick forms (.pre-reservation): Envoyer is as tall as the 42px
+   fields and starts on their top edge (the origin's 1-1.5rem top margin
+   and 15-17px padding made it 55-61px tall and lower than the fields) ---- */
+.pre-reservation .btnreservation .button,
+.pre-reservation .btnreservation .button:hover { box-sizing: border-box; height: 42px; margin-top: 0;
+  padding-top: 0; padding-bottom: 0; line-height: normal; vertical-align: top; }
+
+/* ---- home hero: the origin overlays absolutely positioned captions on a
+   2650x751 photo (28% of the width tall). Below ~1440px the photo gets
+   shorter than the captions, which then spill onto the white quote form
+   (white text on white); below 1100px the fixed 762px heading also runs
+   off screen. ---- */
+/* 1200-1439px: same overlay, the photo just keeps the 410px it has at 1440 */
+@media (min-width: 1200px) {
+  #carousel-header .item > img { display: block; min-height: 410px; object-fit: cover; }
+  /* the three bullet points stay on one line (they wrap under ~1330px) */
+  #carousel-header .carousel-puce { right: 0; white-space: nowrap; }
+}
+/* 768-1199px: captions in normal flow over a cover-fitted photo, so the
+   heading and text wrap inside the hero and the hero grows with them */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #carousel-header .item { position: relative; overflow: hidden;
+    padding: 35px 30px 30px calc(10% + 43px); }
+  #carousel-header .item > img { position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; }
+  #carousel-header .item > .carousel-caption1,
+  #carousel-header .item > .carousel-text,
+  #carousel-header .item > .carousel-button,
+  #carousel-header .item > .carousel-puce { position: relative; left: auto; right: auto; top: auto;
+    width: auto; height: auto; max-width: 760px; }
+  #carousel-header .carousel-caption1 { padding: 0; font-size: inherit; }
+  #carousel-header .carousel-caption1 h1 { font-size: 40px; line-height: 1.2; margin: 0; }
+  /* the green bar: drawn beside the heading instead of at a fixed top */
+  #carousel-header .carousel-bar { display: none; }
+  #carousel-header .carousel-caption1:before { content: ""; position: absolute; left: -43px; top: 5px;
+    bottom: -25px; width: 10px; background: #466951; }
+  #carousel-header .carousel-text { margin-top: 40px; }
+  #carousel-header .carousel-button { margin-top: 25px; }
+  #carousel-header .carousel-button .button { display: inline-block; margin-bottom: 10px; }
+  #carousel-header .carousel-puce { margin: 15px 0 0 -43px; }
+  #carousel-header .carousel-puce ul { margin: 0; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #carousel-header .carousel-caption1 h1 { font-size: 34px; }
+  #carousel-header .carousel-text { font-size: 16px; letter-spacing: 2.5px; }
+  #carousel-header .carousel-puce li { font-size: 16px; }
+}
+
+/* ---- home quick form (Devis gratuit): the 2-column fields cut their
+   placeholder ("Téléphon") at 768-991px ---- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .bgreservation .form-control, .contactprestation .form-control { padding-left: 8px; padding-right: 8px; }
+}
+
+/* ---- home "Quel est notre procédure ?": 262px photo frames and 287px
+   texts in columns narrower than that (<992px) overlap the next column ---- */
+.bkgrey p { max-width: 100%; }
+@media (max-width: 991px) {
+  .bkgrey .bkimg { width: 100%; max-width: 262px; height: auto; }
+  /* the last frame's arrow (:before/:after, right -35px) passes the screen edge */
+  section.bkgrey { overflow-x: clip; }
+}
+
+/* ---- home guarantee circle: 400px wide in a 345px column at 768px ---- */
+@media (min-width: 501px) and (max-width: 991px) {
+  section.one.contactprestation.garantie .cercle { width: 100%; max-width: 400px; height: auto;
+    aspect-ratio: 1 / 1; padding: 4.5rem 25px 0; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  section.one.contactprestation.garantie .cercle { padding-top: 3.5rem; }
+  section.one.contactprestation.garantie .cercle p:first-child span { font-size: 32px !important; }
+  section.one h2.tith2 { font-size: 32px; }
+}
+
+/* ---- justified text opens big gaps between words in narrow columns ---- */
+@media (max-width: 991px) {
+  section p { text-align: left; }
+}
+
+/* ---- contact page: the e-mail address is one long word and ran into the
+   form column at 768-991px ---- */
+.txt p a { overflow-wrap: anywhere; }
+
+/* ---- page banners: the 40px title wraps onto 5-6 lines on phones ---- */
+@media (max-width: 480px) {
+  section.slide h1 { font-size: 32px; }
+}
+
+/* ---- message-envoye + 404 (BH pages, not on the origin): site button ---- */
+.page-msg .btnreservation { margin-top: 25px; }
+.page-msg .btnreservation .button { display: inline-block; background-color: #466951; border: 1px solid #466951;
+  border-radius: 0; color: #fff; font-weight: bold; text-transform: uppercase; padding: 12px 25px; }
+.page-msg .btnreservation .button:hover { background: transparent; color: #466951; }
