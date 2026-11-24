@@ -247,3 +247,22 @@ section.seo h4{
 .page-msg .btnreservation .button { display: inline-block; background-color: #466951; border: 1px solid #466951;
   border-radius: 0; color: #fff; font-weight: bold; text-transform: uppercase; padding: 12px 25px; }
 .page-msg .btnreservation .button:hover { background: transparent; color: #466951; }
+
+/* ---- phone header: the hamburger sat on its own row under the logo
+   (the col-sm-4 / col-sm-8 columns stack below 768px), which made the bar
+   ~145px tall. It now sits on the right of the logo row; the opened menu
+   still drops below. ---- */
+@media (max-width: 767px) {
+  header .header1 { position: relative; }
+  header .header1 > .col-sm-8 { position: static; }
+  header .logo-container { min-height: 56px; padding-left: 15px; padding-right: 65px; gap: 12px; }
+  header .logo-container img { margin: 0; padding-top: 0; flex: none; }
+  header .logo-container .sepalogo { flex: none; margin-left: 0; }
+  header .logo-container .slogan { flex: 1 1 auto; min-width: 0; width: auto; font-size: 14px; line-height: 1.35; }
+  header .header1 .navbar-toggle { position: absolute; top: 28px; right: 15px; margin: 0;
+    transform: translateY(-50%); }
+}
+@media (max-width: 360px) {
+  header .logo-container img { width: 80px !important; }
+  header .logo-container .slogan { font-size: 12px; }
+}
